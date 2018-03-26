@@ -1,0 +1,191 @@
+
+MainActivity.java
+
+package com.example.project7;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.graphics.Color;
+import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    
+    public void Two(View V){
+     EditText t1=(EditText)findViewById(R.id.editText1);
+     EditText t2=(EditText)findViewById(R.id.editText2);
+     int a=Integer.parseInt(t1.getText().toString());
+     int b=Integer.parseInt(t2.getText().toString());
+     int add=a+b;
+     EditText t3=(EditText)findViewById(R.id.editText3);
+     t3.setText(String.valueOf(add));
+     if(add>10)
+     {
+    	 t3.setTextColor(Color.GREEN);
+     }
+     else
+     {
+    	 t3.setTextColor(Color.RED);
+     }
+     t3.setText(String.valueOf(add));
+    }
+public void Stwo(View V){
+	EditText t1=(EditText)findViewById(R.id.editText1);
+    EditText t2=(EditText)findViewById(R.id.editText2);
+    int a=Integer.parseInt(t1.getText().toString());
+    int b=Integer.parseInt(t2.getText().toString());
+    int add=a-b;
+    EditText t3=(EditText)findViewById(R.id.editText3);
+    t3.setText(String.valueOf(add));
+    if(add>10)
+    {
+   	 t3.setTextColor(Color.GREEN);
+    }
+    else
+    {
+   	 t3.setTextColor(Color.RED);
+    }
+    t3.setText(String.valueOf(add));
+}
+public void Mtwo(View V){
+	EditText t1=(EditText)findViewById(R.id.editText1);
+    EditText t2=(EditText)findViewById(R.id.editText2);
+    int a=Integer.parseInt(t1.getText().toString());
+    int b=Integer.parseInt(t2.getText().toString());
+    int mul=a*b;
+    EditText t3=(EditText)findViewById(R.id.editText3);
+    t3.setText(String.valueOf(mul));
+    if(mul>10)
+    {
+   	 t3.setTextColor(Color.GREEN);
+    }
+    else
+    {
+   	 t3.setTextColor(Color.RED);
+    }
+    t3.setText(String.valueOf(mul));
+   
+}
+public void Dtwo(View V){
+	EditText t1=(EditText)findViewById(R.id.editText1);
+    EditText t2=(EditText)findViewById(R.id.editText2);
+    int a=Integer.parseInt(t1.getText().toString());
+    int b=Integer.parseInt(t2.getText().toString());
+    int div=a/b;
+    EditText t3=(EditText)findViewById(R.id.editText3);
+    t3.setText(String.valueOf(div));
+    if(div>10)
+    {
+   	 t3.setTextColor(Color.GREEN);
+    }
+    else
+    {
+   	 t3.setTextColor(Color.RED);
+    }
+    t3.setText(String.valueOf(div));
+   
+}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}
+....................................................................................
+
+
+activity_main_activity.xml
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="27dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="28dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/button1"
+        android:onClick="Stwo"
+        android:text="SUB" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignRight="@+id/editText2"
+        android:onClick="Mtwo"
+        android:text="MUL" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText3"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="72dp"
+        android:layout_marginLeft="14dp"
+        android:onClick="Two"
+        android:text="ADD" />
+
+    <Button
+        android:id="@+id/button4"
+        android:onClick="Dtwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText3"
+        android:layout_alignRight="@+id/button3"
+        android:text="DIV" />
+
+</RelativeLayout>
